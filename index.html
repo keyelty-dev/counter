@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+        }
+        div{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            >.main{
+                width: 300px;
+                height: 300px;
+                position: relative;
+                background: linear-gradient(to right, rgb(16, 16, 16), rgba(173, 161, 161, 0.23));
+                border-radius: 10%;
+               
+                >.counter{
+                    color: white;
+                    width: 100%;
+                    position: absolute;
+                    bottom: -100px; left: 0;
+                    font-size: 40px;
+
+                }
+                >.number{
+                    color: green;
+                    width: 100%;
+                    position: absolute;
+                    bottom: -200px; left: 0;
+                    font-size: 50px;
+                   
+                }
+                >.calculate{
+                    width: 100%;
+                    position: absolute;
+                    bottom: -300px; left: 0;
+                    justify-content: space-evenly;
+                   >button{
+                    color: red;
+                    font-size: 20px;
+                    &:nth-of-type(1){
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: red;
+                        color: white;
+                        
+                    }
+                    &:nth-of-type(3){
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgb(0, 128, 255);
+                        color: white;
+                       
+                    }
+                    &:nth-of-type(2){
+                        width: 100px;
+                        height: 40px;
+                        background-color: gray;
+                        color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                    }
+                   }
+
+                }
+
+            }
+      
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="main">
+            <div class="counter">Counter</div>
+            <div class="number">0</div>
+            <div class="calculate">
+                <button onclick="add()">-</button>
+                <button onclick="reset()">Reset</button>
+                <button onclick="sub()">+</button>
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+
+
+<script>
+    const num=document.querySelector('.number')
+    let x = 0
+    function add() {
+        x--
+        num.textContent = x 
+     
+    }
+    function sub() {
+        x++
+        num.textContent = x 
+     
+    }
+    function reset() {
+        x=0
+        num.textContent = x 
+     
+    }
+
+</script>
+</html>
